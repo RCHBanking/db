@@ -1,0 +1,23 @@
+{
+  "name": "db",
+  "version": "1.0.0",
+  "main": "db.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RCHBanking/db.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RCHBanking/db/issues"
+  },
+  "homepage": "https://github.com/RCHBanking/db#readme",
+  "description": "",
+  "dependencies": {
+    "eslint-config-airbnb-base": "^15.0.0",
+    "pg": "^8.8.0"
+  }
+}

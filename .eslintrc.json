@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+
+  "extends": "airbnb-base",
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "quotes": "off",
+    "no-console": "off"
+  }
+}
