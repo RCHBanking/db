@@ -1,14 +1,12 @@
-DROP SCHEMA IF EXISTS api;
-CREATE SCHEMA IF NOT EXISTS api;
-CREATE EXTENSION uuid-ossp;
+DROP TABLE IF EXISTS customers;
 
-CREATE TABLE IF NOT EXISTS api.customers(
-    customer_id bigint NOT NULL PRIMARY KEY,
+CREATE TABLE IF NOT EXISTS customers(
+    customer_id serial NOT NULL PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
-    lastname VARCHAR(30) NOT NULL,
+    surname VARCHAR(30) NOT NULL,
     date_became_customer date DEFAULT CURRENT_DATE,
-    addr1 VARCHAR(50) NOT NULL,
-    addr2 VARCHAR(20) NOT NULL,
+    address1 VARCHAR(50) NOT NULL,
+    address2 VARCHAR(20) NOT NULL,
     state VARCHAR(2) NOT NULL,
     country VARCHAR(20) NOT NULL DEFAULT 'United States',
     email VARCHAR(50) NOT NULL,
