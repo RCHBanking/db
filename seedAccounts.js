@@ -1,4 +1,4 @@
-const { query, pool } = require('./db.js');
+const { query } = require('./db.js');
 const { faker } = require('@faker-js/faker');
 
 
