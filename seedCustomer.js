@@ -1,7 +1,7 @@
-import axios from "axios";
-import { faker } from '@faker-js/faker';
+const axois = require("axios");
+const { faker } = require('@faker-js/faker');
 
-for (let i = 0; i < 15; i++) {
+for (let i = 0; i < 10; i++) {
     let user = {
         firstname: faker.name.firstName(),
         surname: faker.name.lastName(),

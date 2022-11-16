@@ -1,5 +1,5 @@
 const { Pool } = require("pg");
-const config = require("./dbConfig");
+const config = require("./db.properties");
 
 const pool = new Pool(config);
 
@@ -12,4 +12,5 @@ pool.connect((err) => {
 
 module.exports = {
   query: (text, params, callback) => pool.query(text, params, callback),
+  pool: pool,
 };

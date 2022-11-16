@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS customers;
 
 CREATE TABLE IF NOT EXISTS customers(
-    customer_id serial NOT NULL PRIMARY KEY,
+    id serial NOT NULL PRIMARY KEY,
     firstname VARCHAR(30) NOT NULL,
     surname VARCHAR(30) NOT NULL,
     date_became_customer date DEFAULT CURRENT_DATE,
@@ -10,7 +10,26 @@ CREATE TABLE IF NOT EXISTS customers(
     state VARCHAR(2) NOT NULL,
     country VARCHAR(20) NOT NULL DEFAULT 'United States',
     email VARCHAR(50) NOT NULL,
-    login VARCHAR(50) NOT NULL UNIQUE,
-    password VARCHAR(100) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(100) NOT NULL
 );
+
+DROP TABLE IF EXISTS accounts;
+
+CREATE TABLE IF NOT EXISTS accounts(
+    id serial NOT NULL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    balance numeric NOT NULL,
+    customer_id int4 NOT NULL
+)
+
+DROP TABLE IF EXISTS transactions;
+
+CREATE TABLE IF NOT EXISTS transactions(
+    id serial NOT NULL PRIMARY KEY,
+    description VARCHAR(100),
+    amount numeric NOT NULL,
+    transactionType VARCHAR(20) NOT NULL,
+    account_id int4 NOT NULL
+)
 
