@@ -1,21 +1,18 @@
-const axois = require("axios");
-const { query } = require("./db.js");
+const axios = require("axios");
 const { faker } = require('@faker-js/faker');
 
-for (let i = 0; i < 15; i++) {
-    const sql = {
-        text: 'INSERT INTO customers(firstname, surname, address1, address2, state, email, username, password) VALUES($1, $2, $3, $4, $5, $6, $7, $8)',
-        values: [
-            faker.name.firstName(),
-            faker.name.lastName(),
-            faker.address.streetAddress(),
-            faker.address.secondaryAddress(),
-            faker.address.stateAbbr(),
-            faker.internet.email(),
-            faker.internet.userName(),
-            "password"]
-    };
-    query(sql).then(() => console.log(sql.values));
+for (let i = 0; i < 10; i++) {
+    let user = {
+        firstname: faker.name.firstName(),
+        surname: faker.name.lastName(),
+        address1: faker.address.streetAddress(),
+        address2: faker.address.secondaryAddress(),
+        state: faker.address.stateAbbr(),
+        email: faker.internet.email(),
+        username: faker.internet.userName(),
+        password: "password",
+    }
+    axios.post("http://localhost:8080/api/customer/register", user);
 }
 
 
