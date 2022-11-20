@@ -10,13 +10,13 @@ query('SELECT id FROM customers')
     .then(res => {
         for (let row of res.rows) {
             const sql = {
-                text: 'INSERT INTO accounts(name, account_type, balance, customer_id) VALUES($1, $2, $3) RETURNING *',
+                text: 'INSERT INTO accounts(name, account_type, balance, customer_id) VALUES($1, $2, $3, $4) RETURNING *',
                 values: ['checking','CHECKING',faker.finance.amount(5000, 10000, 2), row.id]
             }
             
             query(sql);
             const sql2 = {
-                text: 'INSERT INTO accounts(name,account_type, balance, customer_id) VALUES($1, $2, $3) RETURNING *',
+                text: 'INSERT INTO accounts(name,account_type, balance, customer_id) VALUES($1, $2, $3, $4) RETURNING *',
                 values: ['savings','SAVINGS',faker.finance.amount(5000, 100000, 2), row.id]
             }
             query(sql2);
