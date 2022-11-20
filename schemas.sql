@@ -19,6 +19,7 @@ DROP TABLE IF EXISTS accounts;
 
 CREATE TABLE IF NOT EXISTS accounts(
     id serial NOT NULL PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
     account_type VARCHAR(20) NOT NULL,
     balance numeric NOT NULL,
     customer_id int4 NOT NULL
